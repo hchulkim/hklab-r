@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/articles/special-files.html
 
 library(testthat)
-library(gslab_r)
+library(hklab-r)
 
-test_check("gslab_r")
+test_check("hklab-r")
