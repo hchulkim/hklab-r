@@ -2,5 +2,10 @@
 
 export(AutoFill)
 export(multi_read)
+importFrom(dplyr,bind_rows)
+importFrom(purrr,map)
+importFrom(readr,locale)
+importFrom(readxl,read_excel)
 importFrom(utils,capture.output)
+importFrom(utils,read.csv)
 importFrom(utils,write.table)

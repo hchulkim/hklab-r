@@ -26,6 +26,8 @@ multi_read(
 \item{header}{TRUE if the header is already in the data.}
 
 \item{encoding}{The way file was encoded.}
+
+\item{...}{Additional arguments passed to the function}
 }
 \description{
 Read in multiple data at once and bind them together.

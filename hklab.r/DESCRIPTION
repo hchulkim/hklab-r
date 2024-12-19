@@ -4,7 +4,13 @@ Version: 0.1.0
 Authors@R: 
     person("Hyoungchul", "Kim", , "hchul.kim96@gmail.com", role = c("aut", "cre"))
 Description: Personal tool packages for Hyoungchul Kim.
-License: use_mit_license()
+Imports:
+    readr,
+    dplyr,
+    purrr,
+    readxl,
+    utils
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2.9000

@@ -6,7 +6,13 @@
 #' @param read_func Type of function you are using to read files. 
 #' @param header TRUE if the header is already in the data. 
 #' @param encoding The way file was encoded.
-#'
+#' @param ... Additional arguments passed to the function
+#' 
+#' @importFrom readr locale
+#' @importFrom utils read.csv
+#' @importFrom dplyr bind_rows
+#' @importFrom purrr map
+#' @importFrom readxl read_excel
 #' @export
 
 multi_read <- function(pattern, path = ".", bind = FALSE, read_func = NULL, header = TRUE, encoding = "UTF-8", ...) {
