@@ -36,19 +36,19 @@ To install a package from GitHub, use the `install_github` function. To install 
 ### Workflow
 
 The workflow for the creation of a package might be:
-  1. Create a new branch of `gslab_r` named `development-packagename` from the`master` branch.
+  1. Create a new branch of `hklab-r` named `development-packagename` from the`master` branch.
   2. Open R, load `devtools`, and run `create("packagename")` from the root of `gslab_r`.
   3. Write the functions, in-file documentation, and unit tests for the package.
     *  From the head of the directory, run `document` in R to add and update documentation as needed. 
     *  From the head of the directory, run `devtools::check` in R to perform unit tests as needed.
-  4. When development is complete follow GSLab procedure to merge the `development-packagename` branch into `master`.
+  4. When development is complete, merge the `development-packagename` branch into `master`.
 
 The workflow to add a feature to a package that already exists might be:
-  1. Create a new branch of `gslab_r` named `development-packagename-issue` from the `development-packagename` branch.
+  1. Create a new branch of `hklab-r` named `development-packagename-issue` from the `development-packagename` branch.
   3. Write the new functions, in-file documentation, and unit tests for the package.
     *  From the head of the directory in R, run `document` to add and update documentation as needed. 
     *  From the head of the directory in R, run `devtools::check` to perform unit tests as needed.
-  4. When development is complete follow GSLab procedure to merge the `development-packagename-issue` branch into `development-packagename`.
+  4. When development is complete, merge the `development-packagename-issue` branch into `development-packagename`.
 
 ##  Anatomy of a hklabr R package
 
