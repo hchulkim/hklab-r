@@ -15,7 +15,7 @@
 #' @importFrom readxl read_excel
 #' @export
 
-multi_read <- function(pattern, path = ".", bind = FALSE, read_func = NULL, header = TRUE, encoding = "UTF-8", ...) {
+multi_read <- function(pattern, path = ".", bind = TRUE, read_func = NULL, header = TRUE, encoding = "UTF-8", ...) {
   # List files matching the pattern
   files <- list.files(path = path, pattern = pattern, full.names = TRUE)
   if (length(files) == 0) {
@@ -41,8 +41,10 @@ multi_read <- function(pattern, path = ".", bind = FALSE, read_func = NULL, head
     tryCatch(
       {
         message("Reading file: ", file)
-        # Handle header and encoding for different read functions
-        if ("col_names" %in% names(formals(read_func))) {
+        # Handle parameters based on the read function
+        if (identical(read_func, readxl::read_excel)) {
+          read_func(file, ...)
+        } else if ("col_names" %in% names(formals(read_func))) {
           # For functions like read_csv
           read_func(file, col_names = header, locale = locale(encoding = encoding), ...)
         } else if ("header" %in% names(formals(read_func))) {
@@ -54,10 +56,17 @@ multi_read <- function(pattern, path = ".", bind = FALSE, read_func = NULL, head
         }
       },
       error = function(e) {
-        stop("Error reading file: ", file, "\nDetails: ", e$message)
+        warning("Error reading file: ", file, "\nDetails: ", e$message)
+        NULL
       }
     )
   })
+  
+  # Filter out failed reads
+  data_list <- data_list[!sapply(data_list, is.null)]
+  if (length(data_list) == 0) {
+    stop("No files were successfully read.")
+  }
   
   # Combine data frames if bind = TRUE
   if (bind) {
