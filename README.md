@@ -12,6 +12,7 @@ For tools on package development, try these below:
 | -------- | ----------- |
 | [O'Reily R Packages](http://r-pkgs.had.co.nz/) | A detailed guide of the package development process |
 | [Hilary Parker](https://hilaryparker.com/2014/04/29/writing-an-r-package-from-scratch/) | Barebones guide to package development with `devtools` |
+| [R package primer](https://kbroman.org/pkg_primer/) | Another guide to package development (especially helpful when you want to put the package on CRAN) |
 | [`devtools` on GitHub](https://github.com/hadley/devtools) | Easy package creation functions |
 | [`roxygen2` vignette](https://cran.r-project.org/web/packages/roxygen2/vignettes/rd.html) | Methods for package documentation |
 | [`testthat` tutorial](https://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf) | Contemporary unit testing in R |
